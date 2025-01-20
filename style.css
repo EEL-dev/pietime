@@ -1,111 +1,185 @@
+:root
+{
+	--pietime-red:      #e03c28;
+  --pietime-dark-red: #bb3037;
+  --pietime-white:    #eeeeee;
+  --pietime-tan:      #dcbeb2;
+}
+
 @font-face
 {
   font-family: 'Futura';
   src: url('./Futura\ Extra\ Bold.otf');
 }
 
-*
+@font-face
 {
-  padding: 0;
+  font-family: 'Sanvito';
+  src: url('./SanvitoPro-BoldCapt.otf');
+}
+
+body {
   margin: 0;
+  padding: 0;
+  font-family: Helvetica, sans-serif;
+  background-color: #f4f4f4;
 }
 
-body
-{
-  background-color: #777;
+a {
+  color: #000;
 }
 
-.site-header
-{
-  background-color: #e03c28; /*bb3037*/
-  filter: drop-shadow(0px 12px 12px #00000055);
+/* HEADER */
+
+.header {
+  background-color: var(--pietime-red);
+  /*box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);*/
+  position: fixed;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  z-index: 3;
 }
 
-.site-header-wrapper
-{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-
+.header-container {
   max-width: 1170px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  margin: auto;
+
 }
 
-.site-header-logo
-{
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: var(--pietime-red);
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  /*border-right: 1px solid #f4f4f4;*/
   text-decoration: none;
+  color: var(--pietime-white);
+  font-family: 'Futura';
+  font-size: 2.2em;
+  letter-spacing: 0.075em;
 }
 
-.site-header-logo-text
-{
+.header li a:hover,
+.header .menu-btn:hover {
+  color: var(--pietime-tan);
+  background-color: var(--pietime-dark-red);
+}
+
+.header .logo {
+  display: block;
+  float: left;
   font-family: 'Futura';
   font-size: 4em;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: var(--pietime-white);
   letter-spacing: 0.15em;
-  padding-top: 0.4em;
-  padding-bottom: 0.4em;
+}
 
-  text-align: center;
+/* DROPDOWN MENU */
 
-  color: #eeeeee;
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .3s ease;
+}
 
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 44px 32px;
+  position: relative;
   user-select: none;
 }
 
-svg
-{
-  fill: #eeeeee;
-  width: 32px;
+.header .menu-icon .navicon {
+  background: var(--pietime-white);
+  display: block;
+  height: 8px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 40px;
+  border-radius: 10px;
 }
 
-svg:hover
-{
-  fill:#dcbeb2;
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: var(--pietime-white);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+  border-radius: 10px;
 }
 
-.dropdown-container
-{
-  height: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
-
-  background-color: #529bcb;
-  padding-left: 48px;
+.header .menu-icon .navicon:before {
+  top: 15px;
 }
 
-.dropdown-item
-{
-  font-family: 'Futura';
-  font-size: 2.5em;
-  letter-spacing: 0.075em;
-  padding-top: 0.4em;
-  padding-bottom: 0.4em;
-
-  max-width: 1170px;
-  margin-left: auto;
-  margin-right: auto;
+.header .menu-icon .navicon:after {
+  top: -15px;
 }
 
-ul
-{
-  list-style-type: none;
+/* menu button */
+
+.header .menu-btn {
+  display: none;
 }
 
-a
-{
-  text-decoration: none;
-  color: #eeeeee;
+.header .menu-btn:checked ~ .menu {
+  max-height: 300px;
 }
 
-a:hover
-{
-  color: #dcbeb2;
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
 }
 
-footer
-{
-  background-color: #529bcb;
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 64em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 24px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+
+  /* overwrite darker button background */
+  .header li a:hover,
+  .header .menu-btn:hover {
+    background-color: var(--pietime-red);
+  }
 }
