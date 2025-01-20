@@ -1,6 +1,6 @@
 :root
 {
-	--pietime-red:      #e03c28;
+  --pietime-red:      #e03c28;
   --pietime-dark-red: #bb3037;
   --pietime-white:    #eeeeee;
   --pietime-tan:      #dcbeb2;
@@ -97,7 +97,9 @@ a {
   cursor: pointer;
   display: inline-block;
   float: right;
-  padding: 44px 32px;
+  padding-top: 44px;
+  padding-right: 32px;
+  padding-bottom: 32px;
   position: relative;
   user-select: none;
 }
