@@ -78,6 +78,7 @@ a {
   font-family: 'Futura';
   font-size: 4em;
   padding: 10px 20px;
+  padding-right: 0;
   text-decoration: none;
   color: var(--pietime-white);
   letter-spacing: 0.15em;
