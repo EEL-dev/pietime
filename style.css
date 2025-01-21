@@ -1,44 +1,59 @@
-:root
-{
-  --pietime-red:      #e03c28;
+:root {
+	--pietime-red:      #e03c28;
   --pietime-dark-red: #bb3037;
   --pietime-white:    #eeeeee;
   --pietime-tan:      #dcbeb2;
 }
 
-@font-face
-{
+@font-face {
   font-family: 'Futura';
   src: url('./Futura\ Extra\ Bold.otf');
 }
 
-@font-face
-{
+@font-face {
   font-family: 'Sanvito';
   src: url('./SanvitoPro-BoldCapt.otf');
+}
+
+@font-face {
+  font-family: 'Questrial';
+  src: url('./Questrial-Regular.ttf');
+}
+
+* {
+  padding: 0;
+  margin: 0;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: Helvetica, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Questrial';
 }
 
 a {
-  color: #000;
+  text-decoration: none;
+}
+
+.spacer
+{
+  width: 100%;
+  height: 140px;
 }
 
 /* HEADER */
 
 .header {
   background-color: var(--pietime-red);
-  /*box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);*/
+  /*box-shadow: 4px 4px 8px 0 #00000099;*/
+  filter: drop-shadow(0px 8px 8px #00000077);
   position: fixed;
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
   z-index: 3;
+  top: 0;
+  user-select: none;
 }
 
 .header-container {
@@ -58,7 +73,6 @@ a {
 .header li a {
   display: block;
   padding: 20px 20px;
-  /*border-right: 1px solid #f4f4f4;*/
   text-decoration: none;
   color: var(--pietime-white);
   font-family: 'Futura';
@@ -185,4 +199,110 @@ a {
   .header .menu-btn:hover {
     background-color: var(--pietime-red);
   }
+}
+
+/* IMAGES */
+
+.image {
+  width: 100%;
+  background: url(interior.webp) no-repeat 50% 50%;
+  background-size: cover;
+  height: 500px;
+}
+
+.image-text-container {
+  margin: auto;
+  padding-top: 160px;
+  user-select: none;
+  filter: drop-shadow(3px 3px 0px #8b1818);
+}
+
+.image-text {
+  font-family: 'Sanvito';
+  font-size: 3em;
+  color: var(--pietime-white);
+  text-align: center;
+}
+
+.image-socials {
+  padding-top: 80px;
+  margin: auto;
+  text-align: center;
+}
+
+.image-socials svg {
+  fill: var(--pietime-white);
+  width: 32px;
+  padding: 4px;
+}
+
+.image-socials svg:hover {
+  fill: var(--pietime-tan);
+}
+
+/* FOOTER */
+
+footer
+{
+  background-color: #529bcb;
+  height: 200px;
+  padding: 24px;
+  text-align: center;
+}
+
+.site-footer-wrapper
+{
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 24px;
+  color: var(--pietime-white);
+  font-size: 16px;
+  user-select: none;
+}
+
+.site-footer-wrapper p
+{
+  padding-bottom: 8px;
+}
+
+svg
+{
+  fill: var(--pietime-white);
+  width: 32px;
+  padding: 4px;
+}
+
+svg:hover
+{
+  fill:var(--pietime-tan);
+}
+
+/* MAP */
+.map-container
+{
+  background-color: #dcbeb2;
+  padding: 24px;
+  height: 750px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.map-container p
+{
+  user-select: none;
+  padding-bottom: 8px;
+}
+
+.map
+{
+  max-width: 1170px;
+  height: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.map-text
+{
+  padding-bottom: 24px;
 }
