@@ -281,7 +281,7 @@ svg:hover
 /* MAP */
 .map-container
 {
-  background-color: #dcbeb2;
+  background-color: var(--pietime-tan);
   padding: 24px;
   height: 750px;
   text-align: center;
@@ -305,4 +305,32 @@ svg:hover
 .map-text
 {
   padding-bottom: 24px;
+}
+
+/* MENU GOOGLE DOC */
+
+.menu-container
+{
+  width: 100%;
+  background-color: var(--pietime-tan);
+  height: 1250px;
+}
+.google-doc-container
+{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.google-doc-embed
+{
+  padding: 24px;
+  width: 800px;
+  height: 90%;
+  overflow: hidden;
+  border: none;
+  background-color: white;
+  box-shadow: 0 8px 8px rgba(0,0,0,0.1);
 }
