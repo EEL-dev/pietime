@@ -334,10 +334,28 @@ svg:hover
   background-color: white;
   box-shadow: 0 8px 8px rgba(0,0,0,0.1);
 }
+
+/*
 @media (max-width: 64em)
 {
   .google-doc-embed
   {
-  transform: scale(0.8);
+    padding: 0;
+    transform: scale(0.5);
+    transform-origin: 0.5 0.5;
+    padding: 50px;
+    display: block;
   }
 }
+*/
+
+/*
+@media (min-width: 64.1em)
+{
+  .google-doc-embed
+  {
+    transform: scale(1.5);
+    padding-top: 400px;
+  }
+}
+*/
