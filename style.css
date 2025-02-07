@@ -204,15 +204,14 @@ a {
 @media (max-width: 64em) {
   /* shrink PIE TIME logo to fit for narrow phones */
   .header .logo {
-    font-size: 3em;
+    font-size: 48px;
     padding-left: 12px;
   }
   .header .menu-icon {
     padding-right: 12px;
     padding-top: 36px;
   }
-  .spacer
-  {
+  .spacer {
     width: 100%;
     height: 110px;
   }
