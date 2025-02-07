@@ -28,7 +28,11 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Questrial';
+  /*font-family: 'Questrial';
+*/
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #222;
 }
 
 a {
@@ -45,7 +49,6 @@ a {
 
 .header {
   background-color: var(--pietime-red);
-  /*box-shadow: 4px 4px 8px 0 #00000099;*/
   filter: drop-shadow(0px 8px 8px #00000077);
   position: fixed;
   width: 100%;
@@ -156,7 +159,7 @@ a {
 }
 
 .header .menu-btn:checked ~ .menu {
-  max-height: 300px;
+  max-height: 350px; /* 300px */
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -178,7 +181,7 @@ a {
 
 /* 48em = 768px */
 
-@media (min-width: 64em) {
+@media (min-width: 72em) { /* 64em */
   .header li {
     float: left;
   }
@@ -201,7 +204,7 @@ a {
   }
 }
 
-@media (max-width: 64em) {
+@media (max-width: 72em) {
   /* shrink PIE TIME logo to fit for narrow phones */
   .header .logo {
     font-size: 48px;
@@ -355,27 +358,188 @@ iframe {
   pointer-events: none;
 }
 
-/*
-@media (max-width: 64em)
-{
-  .google-doc-embed
-  {
-    padding: 0;
-    transform: scale(0.5);
-    transform-origin: 0.5 0.5;
-    padding: 50px;
-    display: block;
-  }
-}
-*/
+/* GALLERY */
 
-/*
-@media (min-width: 64.1em)
-{
-  .google-doc-embed
-  {
-    transform: scale(1.5);
-    padding-top: 400px;
+.gallery-ul {
+  display: flex;
+  flex-wrap: wrap;
+  &:after {
+    content:'';
+    display:block;
+    flex-grow: 10;
+  }
+  background-color: var(--pietime-tan);
+}
+
+.gallery-li {
+  height: 40vh;
+  flex-grow: 1;
+}
+
+.gallery-li:last-child {
+  flex-grow: 10;
+}
+
+.gallery-img {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .gallery-li {
+    height: 30vh;
   }
 }
-*/
+
+@media (max-height: 480px) {
+  .gallery-li {
+    height: 80vh;
+  }
+}
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  .gallery-ul {
+    flex-direction: row;
+  }
+  .gallery-li {
+    height: auto;
+    width: 100%;
+  }
+  .gallery-img {
+    width: 100%;
+    max-height: 75vh;
+    min-width: 0;
+  }
+}
+
+/* CONTACT FORM */
+.order-form-container {
+  width: 100%;
+  background-color: var(--pietime-tan);
+  padding: 0;
+  padding-top: 48px;
+  padding-bottom: 128px;
+  box-sizing: border-box;
+}
+
+.order-form {
+  max-width: 800px;
+  margin: auto;
+  background-color: var(--pietime-white);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.order-form h2 {
+  padding-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input, select, textarea {
+  width: 95%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group input[type="number"] {
+  width: 60%;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+button.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--pietime-red);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+button.submit-btn:hover {
+  background-color: var(--pietime-dark-red);
+}
+
+/* ABOUT */
+.text-wrapper {
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 24px;
+  background-color: var(--pietime-white);
+  border-radius: 8px;
+}
+
+.about {
+  padding: 24px;
+  width: 100%;
+  background-color: var(--pietime-tan);
+  box-sizing: border-box;
+}
+
+.about p {
+  text-wrap: pretty;
+}
+
+/* SUPPLIERS TABLE */
+.suppliers-table {
+  width: 100%;
+  margin: auto;
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+  box-sizing: border-box;
+  table-layout: fixed;
+}
+
+thead {
+  background-color: var(--pietime-red);
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+  word-wrap: break-word;
+}
+
+th {
+  font-size: 1.2em;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.text-wrapper a {
+  color: var(--pietime-red);
+  text-decoration: none;
+}
+
+.text-wrapper a:hover {
+  text-decoration: underline;
+}
+
+.text-wrapper h1 {
+  padding-bottom: 16px;
+}
